@@ -236,7 +236,7 @@ start_build_process() {
         echo "Build successful. Starting upload script..."
         # Calls the go-up script
         rm -rf go-up*
-        wget https://raw.githubusercontent.com/nekoshirro/tools-gofile/refs/heads/private/go-up
+        wget https://raw.githubusercontent.com/Szetian/Crave_builder/refs/heads/Lunaris/go-up
         chmod +x go-up
         ./go-up out/target/product/courbet/*courbet*.zip
     else
