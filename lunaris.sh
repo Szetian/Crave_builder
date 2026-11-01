@@ -238,7 +238,7 @@ start_build_process() {
         rm -rf go-up*
         wget https://raw.githubusercontent.com/nekoshirro/tools-gofile/refs/heads/private/go-up
         chmod +x go-up
-        ./go-up out/target/product/courbet/*marble*.zip
+        ./go-up out/target/product/courbet/*courbet*.zip
     else
         echo "Build failed. Skipping upload."
     fi
