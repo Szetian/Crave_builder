@@ -135,8 +135,7 @@ start_build_process() {
     # ORIGINAL BUILD STEPS
     # =========================================================
 
-    # Init PixelOS 16.2
-    rm -rf frameworks/base build/soong prebuilt
+    # Init LunarisAOSP
     repo init --depth=1 -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs
 
     # Resync sources
@@ -153,19 +152,17 @@ start_build_process() {
     rm -rf kernel/xiaomi/sm6150
     rm -rf device/xiaomi/sm6150-common
     rm -rf vendor/xiaomi/sm6150-common
-    rm -rf kernel/xiaomi/sm6150
     rm -rf vendor/xiaomi/miuicamera-courbet
-    rm -rf hardware/xiaomi
     rm -rf out/target/product/courbet
     echo "Successfully deleted previous repositories."
 
     echo "Cloning device stuff..."
     # Device Trees
-    git clone https://github.com/Szes-Labs/device_xiaomi_courbet.git device/xiaomi/courbet -b lunar --depth 1
+    git clone -b lunar --depth 1 https://github.com/Szes-Labs/device_xiaomi_courbet.git device/xiaomi/courbet
     git clone -b lunar --depth 1 https://github.com/Szes-Labs/device_xiaomi_sm6150-common.git device/xiaomi/sm6150-common
     
     # Kernel
-    git clone https://github.com/Szes-Labs/kernel_xiaomi_sm6150.git -b aosp kernel/xiaomi/sm6150 --depth 1
+    git clone -b aosp --depth 1 https://github.com/Szes-Labs/kernel_xiaomi_sm6150.git kernel/xiaomi/sm6150
     
     # Vendor tree
     git clone -b 16 --depth 1 https://github.com/Szes-Labs/vendor_xiaomi_sm6150-common.git vendor/xiaomi/sm6150-common
